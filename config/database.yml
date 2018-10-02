@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: car_development
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+  schema_search_path: adm_car
+
+test:
+  <<: *default
+  database: car_test
+  username: postgres
+  password: postgres
+
+#production:
+#  <<: *default
+#  database: car_rent_admin_production
+#  username: car_rent_admin
+#  password: <%= ENV['CAR_RENT_ADMIN_DATABASE_PASSWORD'] %>
